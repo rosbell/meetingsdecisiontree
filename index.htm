@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+	title:	Meetings makeover
+	desc:	Do you need a meeting?
+	author:	@asameshimae
+	license:code is CC0; images from giphy; jQuery from jQuery.
+-->
+
+<head>
+	<meta charset="UTF-8">
+	<title>Do you need a meeting?</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,800i" rel="stylesheet">
+	<style>
+		body { 
+			font-family: 'Montserrat', sans-serif;
+			background-color:#eff;
+			margin-left: 3em;
+			margin-top: 4em;
+			color: #333;
+			font-size: 200%;
+		}
+		h1 {
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 800;
+			font-style: italic;
+			border-bottom: 1px dotted #555;
+			margin-right: 5em;
+			padding-bottom: .2em;
+		}
+		a {
+			color: #FF5733;
+		}
+		a:active, a:hover {
+			color:#82E0AA;
+		}
+		#response {
+			display: none;
+		}
+		.level {
+			display: none;
+		}
+	</style>
+
+	<!-- google-hosted jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
+
+</head>
+<body>
+
+	<div id="questions">
+
+		<div class="level" data-level="1">
+			<h1>Do you have a clear purpose?</h1>
+			<!-- <img src="http://i.giphy.com/3o7abAHdYvZdBNnGZq.gif" style="width:500px; height:auto;"/> -->
+			<p>
+				<a href="#" class="answer"
+					data-nextlevel="2">Yes</a> &emsp;
+				<a href="#" class="answer"
+					data-nextlevel="3">No</a>
+			</p>
+		</div>
+
+		<div class="level" data-level="2">
+			<h1>Do you need input or opinion from other people?</h1>
+			<!-- <img src="http://i.giphy.com/c5Rlke9hRLoDS.gif"/> -->
+			<p>
+				<a href="#" class="answer" data-nextlevel="4">Yes</a>&emsp;
+				<a href="#" class="answer" data-nextlevel="5">No</a>
+			</p>
+		</div>
+
+		<div class="level" data-level="3">
+			<h1>You don't need a meeting!</h1>
+			<img src="http://i.giphy.com/RyxeaK6CrfP0Y.gif"/>
+			<p>
+				Schedule some thinking time instead.
+			</p>
+			<p>
+				<a href="#" class="answer" data-nextlevel="1">Go back to the beginning</a>
+			</p>
+		</div>
+
+		<div class="level" data-level="4">
+			<h1>Does moving forward require a real time conversation?</h1>
+			<!-- <img src="http://i.giphy.com/kewCD3ucGAwak.gif"/> -->
+			<p>
+				<a href="#" class="answer" data-nextlevel="6">Yes</a>&emsp;
+				<a href="#" class="answer" data-nextlevel="7">No</a>
+			</p>
+		</div>
+
+
+		<div class="level" data-level="5">
+			<h1>No meeting needed</h1>
+			<!-- <img src="http://i.giphy.com/11qNtu3829ph72.gif"/> -->
+			<p>
+				Make a decision and then do the work.
+			</p>
+			<p>
+				<a href="#" class="answer" data-nextlevel="1">Go back to the beginning</a>
+			</p>
+		</div>
+
+		<div class="level" data-level="6">
+			<h1>Do you need to meet face to face with the whole group in one place?</h1>
+			<!-- <img src="http://i.giphy.com/kewCD3ucGAwak.gif"/> -->
+			<p>
+				<a href="#" class="answer" data-nextlevel="7">Yes</a>&emsp;
+				<a href="#" class="answer" data-nextlevel="8">No</a>
+			</p>
+		</div>
+
+
+		<div class="level" data-level="7">
+			<h1>Does moving forward require a real time conversation?</h1>
+			<!-- <img src="http://i.giphy.com/qISaMW1xwmvNS.gif"/> -->
+			<p>
+				<a href="#" class="answer" data-nextlevel="9">Yes</a>&emsp;
+				<a href="#" class="answer" data-nextlevel="10">No</a>
+			</p>
+		</div>
+
+
+		<div class="level" data-level="8">
+			<h1>No meeting</h1>
+			<!-- <img src="http://i.giphy.com/Jx2YWZoo8ZsuQ.gif"/> -->
+			<p>
+				Use Lync, video conferencing, informal chats, or telephone calls.
+			</p>
+			<p>
+				<a href="#" class="answer" data-nextlevel="1">Go back to the beginning</a>
+			</p>
+		</div>
+
+		<div class="level" data-level="9">
+			<h1>SCHEDULE A MEETING!</h1>
+			<p>
+				Share your agenda and aims, and invite only people who need to be there. 
+				Refer to guidelines for effective meetings.
+			</p>
+			<img src="https://media.giphy.com/media/26tPghhb310muUkEw/giphy.gif"/> 
+		</div>
+
+		<div class="level" data-level="10">
+			<h1>No meeting</h1>
+			<!-- <img src="http://i.giphy.com/Jx2YWZoo8ZsuQ.gif"/> -->
+			<p>
+				Provide an update or info via an online library system (eg. Library Connect) 
+				and ask for feedback.
+			</p>
+			<p>
+				<a href="#" class="answer" data-nextlevel="1">Go back to the beginning</a>
+			</p>
+		</div>
+
+	</div>
+
+
+	<script>
+	// when the document is ready in the browser, do this...
+	$(document).ready(function(){
+
+		$('[data-level=1]').show();
+
+		$('.answer').click(function(){
+			$('.level').hide();
+			$('[data-level='+$(this).data('nextlevel')+']').show();
+		});
+
+	});
+	</script>
+
+</body>
+</html>
